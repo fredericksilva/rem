@@ -3,6 +3,11 @@ var babel = require('gulp-babel');
 var coffee = require('gulp-coffee');
 var sourcemaps = require('gulp-sourcemaps');
 
+var paths = {
+  dest: 'build',
+  sourceMaps: 'sourcemaps',
+};
+
 gulp.task('babel', function() {
   return gulp.src('src/**/*.js')
     .pipe(sourcemaps.init())
@@ -20,16 +25,16 @@ gulp.task('babel', function() {
         'runtime',
       ],
     }))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('build'));
+    .pipe(sourcemaps.write(paths.sourceMaps))
+    .pipe(gulp.dest(paths.dest));
 });
 
 gulp.task('coffee', function() {
   return gulp.src('src/**/*.coffee')
     .pipe(sourcemaps.init())
     .pipe(coffee({bare: true}))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest('build'));
+    .pipe(sourcemaps.write(paths.sourceMaps))
+    .pipe(gulp.dest(paths.dest));
 });
 
 gulp.task('default', ['babel', 'coffee']);
