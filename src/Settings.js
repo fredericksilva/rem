@@ -29,7 +29,7 @@ class Settings {
    * Loads the configuration settings from the package.json file in the current
    * working directory.
    */
-  static async load() {
+  static async loadAsync() {
     let baseDirectory = process.cwd();
     let packageJSONPath = path.resolve(baseDirectory, 'package.json');
     let packageJSON = await fs.promise.readFile(packageJSONPath, 'utf8');
