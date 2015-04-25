@@ -23,7 +23,9 @@
   },
   "homepage": "https://github.com/650Industries/rem2#readme",
   "devDependencies": {
-    "coffee-script": "^1.9.2"
+    "babel-eslint": "^3.0.1",
+    "coffee-script": "^1.9.2",
+    "eslint": "^0.20.0"
   },
   "nativePackage": true,
   "dependencies": {
