@@ -3,6 +3,7 @@
 require('instapromise');
 
 const escapeStringRegexp = require('escape-string-regexp');
+const path = require('path');
 const util = require('util');
 
 const PRELUDE = '# [REM]';
@@ -34,7 +35,19 @@ class PodfileEditor {
   }
 
   _createREMSection(): string {
-    let command = util.format('eval(`%s`)', 'some path here');
+    let relativeBasePath = path.relative(
+      this.settings.xcodeProjectDirectory,
+      this.settings.baseDirectory
+    );
+    let relativeScriptPath = path.join(
+      relativeBasePath,
+      'node_modules/.bin/rem'
+    );
+    let command = util.format(
+      'eval(`%s %s`)',
+      relativeScriptPath,
+      relativeBasePath
+    );
     let lines = [PRELUDE, command, POSTLUDE];
     return '\n' + lines.join('\n');
   }

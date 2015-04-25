@@ -20,7 +20,7 @@ class Settings {
       baseDirectory,
       options[REACT_NATIVE_PATH_KEY] || DEFAULT_REACT_NATIVE_PATH
     );
-    this.podfileDirectory = path.resolve(
+    this.xcodeProjectDirectory = path.resolve(
       baseDirectory,
       options[XCODE_PROJECT_DIRECTORY_KEY] || DEFAULT_XCODE_PROJECT_DIRECTORY
     );
