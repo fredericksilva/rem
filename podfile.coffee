@@ -22,7 +22,7 @@ findNativePackagesAsync = co.wrap (dir='.') ->
 
   foundModules = []
 
-  pkg = jsonAsync path.join dir, 'package.json'
+  pkg = yield jsonAsync path.join dir, 'package.json'
   if pkg.nativePackage?
     foundModules.push {
       path: path.relative '.', dir
@@ -53,7 +53,7 @@ rubyEscapeString = (s) ->
 
 jsonAsync = co.wrap (filepath) ->
   """Returns the JSON object from a given JSON file asynchronously"""
-  
+
   json = yield fs.promise.readFile filepath, 'utf8'
   try
     JSON.parse json
