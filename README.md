@@ -13,9 +13,9 @@ REM's configuration lives in your `package.json` file under a key named "reactNa
     // code for your app. This path is relative to the directory that contains
     // your package.json file.
     "reactNativePath": "node_modules/react-native",
-    // Directory that contains your app's Podfile. This path is relative to the
-    // directory that contains your package.json file.
-    "podfileDirectory": "",
+    // Directory that contains your app's Xcode project file. This path is
+    // relative to the directory that contains your package.json file.
+    "xcodeProjectDirectory": "",
   }
 }
 ```

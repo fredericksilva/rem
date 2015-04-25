@@ -7,10 +7,10 @@ const fs = require('fs');
 
 const SETTINGS_KEY = 'reactNativeApp';
 const REACT_NATIVE_PATH_KEY = 'reactNativePath';
-const PODFILE_DIRECTORY_KEY = 'podfileDirectory';
+const XCODE_PROJECT_DIRECTORY_KEY = 'xcodeProjectDirectory';
 
 const DEFAULT_REACT_NATIVE_PATH = 'node_modules/react-native';
-const DEFAULT_PODFILE_DIRECTORY = '';
+const DEFAULT_XCODE_PROJECT_DIRECTORY = '';
 
 class Settings {
 
@@ -21,7 +21,7 @@ class Settings {
     );
     this.podfileDirectory = path.resolve(
       baseDirectory,
-      options[PODFILE_DIRECTORY_KEY] || DEFAULT_PODFILE_DIRECTORY
+      options[XCODE_PROJECT_DIRECTORY_KEY] || DEFAULT_XCODE_PROJECT_DIRECTORY
     );
   }
 
