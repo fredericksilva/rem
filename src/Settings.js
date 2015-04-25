@@ -15,6 +15,7 @@ const DEFAULT_XCODE_PROJECT_DIRECTORY = '';
 class Settings {
 
   constructor(baseDirectory, options) {
+    this.baseDirectory = baseDirectory;
     this.reactNativePath = path.resolve(
       baseDirectory,
       options[REACT_NATIVE_PATH_KEY] || DEFAULT_REACT_NATIVE_PATH
