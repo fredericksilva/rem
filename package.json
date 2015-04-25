@@ -1,0 +1,33 @@
+{
+  "name": "rem2",
+  "version": "1.0.0",
+  "description": "An alternate implementation of the React Extension Manager",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/650Industries/rem2.git"
+  },
+  "keywords": [
+    "react-native",
+    "react-extension-manager",
+    "react",
+    "cocoapods"
+  ],
+  "author": "650 Industries",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/650Industries/rem2/issues"
+  },
+  "homepage": "https://github.com/650Industries/rem2#readme",
+  "devDependencies": {
+    "coffee-script": "^1.9.2"
+  },
+  "nativePackage": true,
+  "dependencies": {
+    "co": "^4.5.2",
+    "lodash-node": "^3.7.0"
+  }
+}
