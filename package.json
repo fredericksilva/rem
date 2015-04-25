@@ -1,8 +1,8 @@
 {
-  "name": "rem2",
+  "name": "rem2",,
   "version": "1.0.0",
   "description": "An alternate implementation of the React Extension Manager",
-  "main": "index.coffee",
+  "main": "podfile.coffee",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
