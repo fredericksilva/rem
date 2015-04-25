@@ -1,5 +1,5 @@
 {
-  "name": "rem2",,
+  "name": "rem2",
   "version": "1.0.0",
   "description": "An alternate implementation of the React Extension Manager",
   "main": "podfile.coffee",
@@ -30,6 +30,7 @@
     "eslint": "^0.20.0",
     "gulp": "^3.8.11",
     "gulp-babel": "^5.1.0",
+    "gulp-changed": "^1.2.1",
     "gulp-coffee": "^2.3.1",
     "gulp-sourcemaps": "^1.5.2"
   },
@@ -38,6 +39,7 @@
     "co": "^4.5.2",
     "coffee-script": "^1.9.2",
     "instapromise": "^1.0.0",
+    "escape-string-regexp": "^1.0.3",
     "lodash-node": "^3.7.0",
     "minimist": "^1.1.1",
     "yargs": "^3.8.0"
