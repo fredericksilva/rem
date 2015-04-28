@@ -50,7 +50,7 @@ var PodfileEditor = (function () {
     value: function _createREMSection() {
       var relativeBasePath = path.relative(this.settings.xcodeProjectDirectory, this.settings.baseDirectory);
       var relativeScriptPath = path.join(relativeBasePath, 'node_modules/.bin/rem');
-      var command = util.format('eval(`%s %s`)', relativeScriptPath, relativeBasePath);
+      var command = util.format('eval(`%s podfile-fragment -d %s`)', relativeScriptPath, relativeBasePath);
       var lines = [PRELUDE, command, POSTLUDE];
       return '\n' + lines.join('\n');
     }

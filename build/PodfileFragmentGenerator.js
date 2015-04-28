@@ -1,4 +1,4 @@
-var __doc__, assert, co, findNativePackagesAsync, fs, instapromise, isString, jsonAsync, minimist, path, podfileFragmentAsync, rubyEscapeString, util;
+var __doc__, assert, co, findNativePackagesAsync, fs, instapromise, isString, jsonAsync, path, podfileFragmentAsync, rubyEscapeString, util;
 
 __doc__ = "Generates a fragment of a Podfile on the fly that lists\nall the dependencies needed by the nativePackages under\nnode_modules\n";
 
@@ -11,8 +11,6 @@ fs = require('fs');
 instapromise = require('instapromise');
 
 isString = require('lodash-node').isString;
-
-minimist = require('minimist');
 
 path = require('path');
 
