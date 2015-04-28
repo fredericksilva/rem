@@ -64,7 +64,8 @@ async function mainAsync() {
     }
 
     case 'podfile-fragment': {
-      let fragment = await PodfileFragmentGenerator.podfileFragmentAsync();
+      let baseDirectory = argv.directory;
+      let fragment = await PodfileFragmentGenerator.podfileFragmentAsync(baseDirectory);
       console.log(fragment);
       break;
     }
