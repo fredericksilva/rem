@@ -1,7 +1,7 @@
 {
-  "name": "rem2",
-  "version": "1.0.0",
-  "description": "An alternate implementation of the React Extension Manager",
+  "name": "react-extension-manager",
+  "version": "2.0.0",
+  "description": "A program to help set up React Native packages with native code",
   "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/650Industries/rem2.git"
+    "url": "git+https://github.com/ReactExtensionManager/rem.git"
   },
   "keywords": [
     "react-native",
@@ -22,12 +22,12 @@
     "react",
     "cocoapods"
   ],
-  "author": "650 Industries",
+  "author": "rem",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/650Industries/rem2/issues"
+    "url": "https://github.com/ReactExtensionManager/rem/issues"
   },
-  "homepage": "https://github.com/650Industries/rem2#readme",
+  "homepage": "https://github.com/ReactExtensionManager/rem#readme",
   "devDependencies": {
     "babel-eslint": "^3.0.1",
     "eslint": "^0.20.0",
