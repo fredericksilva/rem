@@ -44,7 +44,7 @@ class PodfileEditor {
       'node_modules/.bin/rem'
     );
     let command = util.format(
-      'eval(`%s %s`)',
+      'eval(`%s podfile-fragment -d %s`)',
       relativeScriptPath,
       relativeBasePath
     );
