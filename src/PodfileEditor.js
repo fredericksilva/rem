@@ -49,15 +49,16 @@ class PodfileEditor {
       relativeBasePath
     );
     let lines = [PRELUDE + ' ' + relativeBasePath, command, POSTLUDE];
-    return '\n' + lines.join('\n');
+    return '\n' + lines.join('\n') + '\n';
   }
 
   _getSectionRegex(): RegExp {
     let pattern =
-      '\\n?' +
+      '(?:^\\n)?' +
       '^' + escapeStringRegexp(PRELUDE) +
       '[\\s\\S]*?' +
-      '^' + escapeStringRegexp(POSTLUDE) + '.*';
+      '^' + escapeStringRegexp(POSTLUDE) + '.*' +
+      '\\n?';
     return new RegExp(pattern, 'gm');
   }
 }
