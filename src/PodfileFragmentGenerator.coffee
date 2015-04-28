@@ -60,7 +60,7 @@ jsonAsync = co.wrap (filepath) ->
     throw new Error "#{ util.inspect e } in #{ path.resolve filepath }"
 
 podfileFragmentAsync = co.wrap (dir='.') ->
-  """Returns the text of the Podfile we use for REM"""
+  """Returns the text of the Podfile we use for Rem"""
 
   nativePackages = yield findNativePackagesAsync dir
   podspecs = []

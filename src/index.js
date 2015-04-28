@@ -14,7 +14,7 @@ async function mainAsync() {
   let yargs = require('yargs')
     .usage('Usage: $0 <command> [options]')
     .command('init', 'Initializes the current directory for a project that supports native modules')
-    .command('clean', 'Removes the REM configuration from the project in the current directory')
+    .command('clean', 'Removes the rem configuration from the project in the current directory')
     .command('podfile-fragment', 'Outputs a code fragment to be evaluated inline within a Podfile')
     .options('d', {
       alias: 'directory',
@@ -36,12 +36,12 @@ async function mainAsync() {
       let podfileLoader = new PodfileLoader(settings);
       let podfileEditor = new PodfileEditor(settings);
       let podfile = await podfileLoader.readEnsuredAsync();
-      if (podfileEditor.hasREMSection(podfile)) {
-        console.log("The project's Podfile is already set up with REM.");
+      if (podfileEditor.hasRemSection(podfile)) {
+        console.log("The project's Podfile is already set up with rem.");
       } else {
-        podfile = podfileEditor.addREMSection(podfile);
+        podfile = podfileEditor.addRemSection(podfile);
         await podfileLoader.writeAsync(podfile);
-        console.log("The project's Podfile is now set up with REM.");
+        console.log("The project's Podfile is now set up with rem.");
       }
       break;
     }
@@ -53,12 +53,12 @@ async function mainAsync() {
       let podfileLoader = new PodfileLoader(settings);
       let podfileEditor = new PodfileEditor(settings);
       let podfile = await podfileLoader.readEnsuredAsync();
-      if (podfileEditor.hasREMSection(podfile)) {
-        podfile = podfileEditor.removeREMSection(podfile);
+      if (podfileEditor.hasRemSection(podfile)) {
+        podfile = podfileEditor.removeRemSection(podfile);
         await podfileLoader.writeAsync(podfile);
-        console.log("The project's Podfile no longer includes REM.");
+        console.log("The project's Podfile no longer includes rem.");
       } else {
-        console.log("The project's Podfile already does not include REM.");
+        console.log("The project's Podfile already does not include rem.");
       }
       break;
     }

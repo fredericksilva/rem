@@ -4,7 +4,7 @@ React Extension Manager alternate version
 
 ## Configuration
 
-REM's configuration lives in your `package.json` file under a key named "reactNativeApp".
+rem's configuration lives in your `package.json` file under a key named "reactNativeApp".
 
 ```js
 {

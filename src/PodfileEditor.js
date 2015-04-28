@@ -6,8 +6,8 @@ const escapeStringRegexp = require('escape-string-regexp');
 const path = require('path');
 const util = require('util');
 
-const PRELUDE = '# [REM]';
-const POSTLUDE = '# [/REM]';
+const PRELUDE = '# [rem]';
+const POSTLUDE = '# [/rem]';
 
 class PodfileEditor {
 
@@ -15,26 +15,26 @@ class PodfileEditor {
     this.settings = settings;
   }
 
-  addREMSection(contents: string): string {
-    return contents + this._createREMSection();
+  addRemSection(contents: string): string {
+    return contents + this._createRemSection();
   }
 
-  updateREMSection(contents: string): string {
+  updateRemSection(contents: string): string {
     return contents.replace(
       this._getSectionRegex(),
-      this._createREMSection()
+      this._createRemSection()
     );
   }
 
-  hasREMSection(contents: string): boolean {
+  hasRemSection(contents: string): boolean {
     return this._getSectionRegex().test(contents);
   }
 
-  removeREMSection(contents: string): string {
+  removeRemSection(contents: string): string {
     return contents.replace(this._getSectionRegex(), '');
   }
 
-  _createREMSection(): string {
+  _createRemSection(): string {
     let relativeBasePath = path.relative(
       this.settings.xcodeProjectDirectory,
       this.settings.baseDirectory
@@ -48,7 +48,7 @@ class PodfileEditor {
       relativeScriptPath,
       relativeBasePath
     );
-    let lines = [PRELUDE, command, POSTLUDE];
+    let lines = [PRELUDE + ' ' + relativeBasePath, command, POSTLUDE];
     return '\n' + lines.join('\n');
   }
 
