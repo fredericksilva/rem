@@ -2,12 +2,15 @@
   "name": "rem2",
   "version": "1.0.0",
   "description": "An alternate implementation of the React Extension Manager",
-  "main": "index.js",
+  "main": "build/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "files": [
+    "build"
+  ],
   "bin": {
-    "podfileFragment": "podfileFragment.js"
+    "rem": "build/index.js"
   },
   "repository": {
     "type": "git",
@@ -35,7 +38,7 @@
     "gulp-sourcemaps": "^1.5.2"
   },
   "dependencies": {
-    "babel-runtime": "^5.1.11",
+    "babel-runtime": "^5.1.13",
     "co": "^4.5.2",
     "coffee-script": "^1.9.2",
     "instapromise": "^1.0.0",

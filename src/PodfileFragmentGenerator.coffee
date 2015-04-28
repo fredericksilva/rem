@@ -83,7 +83,3 @@ module.exports = {
   podfileFragmentAsync
   jsonAsync
 }
-
-if require.main is module
-  args = minimist process.argv.slice 2
-  podfileFragmentAsync(args._[0]).then console.log, console.error
