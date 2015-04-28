@@ -13,7 +13,6 @@ instapromise = require 'instapromise'
 {
   isString
 } = require 'lodash-node'
-minimist = require 'minimist'
 path = require 'path'
 util = require 'util'
 

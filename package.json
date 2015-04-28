@@ -44,7 +44,6 @@
     "instapromise": "^1.0.0",
     "escape-string-regexp": "^1.0.3",
     "lodash-node": "^3.7.0",
-    "minimist": "^1.1.1",
     "yargs": "^3.8.0"
   }
 }
