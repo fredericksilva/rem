@@ -8,11 +8,16 @@ const fs = require('fs');
 
 class PodfileLoader {
 
+  constructor(settings: Settings) {
+    this.settings = settings;
+  }
+
   /**
    * Reads the Podfile in the given directory, creating one if it doesn't exist,
    * and returns its contents
    */
-  static async readEnsuredAsync(directory: string): string {
+  async readEnsuredAsync(): string {
+    let directory = this.settings.xcodeProjectDirectory;
     var contents = await this.readAsync(directory);
     if (contents) {
       return contents;
@@ -30,8 +35,9 @@ class PodfileLoader {
    * Reads the Podfile in the given directory and returns its contents, or null
    * if it doesn't exist
    */
-  static async readAsync(directory: string): ?string {
-    var podfilePath = path.join(directory, 'Podfile');
+  async readAsync(): ?string {
+    let directory = this.settings.xcodeProjectDirectory;
+    let podfilePath = path.join(directory, 'Podfile');
     try {
       return await fs.promise.readFile(podfilePath, 'utf8');
     } catch (error) {
@@ -43,10 +49,20 @@ class PodfileLoader {
   }
 
   /**
+   * Writes the Podfile in the given directory.
+   */
+  async writeAsync(contents: string) {
+    let directory = this.settings.xcodeProjectDirectory;
+    let podfilePath = path.join(directory, 'Podfile');
+    await fs.promise.writeFile(podfilePath, contents, 'utf8');
+  }
+
+  /**
    * Creates a Podfile in the given directory with the help of `pod`
    */
-  static createAsync(directory: string): ?string {
+  createAsync(): ?string {
     return new Promise((resolve, reject) => {
+      let directory = this.settings.xcodeProjectDirectory;
       let options = {cwd: directory};
       child_process.exec('pod init', options, (processError, stdout, stderr) => {
         if (processError) {
