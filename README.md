@@ -25,7 +25,7 @@ nvm install iojs
 ```
 Until you close your terminal, running `node` will start the io.js program that you just installed.
 
-Last, you can optionally tell nvm to enable io.js when you open a new terminal window so that you can always run `node` to start io.js:
+Last, you can optionally tell nvm to enable io.js when you open a new terminal window so that `node` will always start io.js:
 ```
 nvm alias default iojs
 ```
@@ -56,7 +56,7 @@ Rem is available as an npm package. Run:
 ```
 npm install -g ReactExtensionManager/rem
 ```
-
+Once rem is ready, we'll publish it to npm.
 
 
 ## Configuration
