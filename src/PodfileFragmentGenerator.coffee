@@ -67,6 +67,8 @@ podfileFragmentAsync = co.wrap (dir='.') ->
   for np in nativePackages
     if np.nativePackage.podspec?
       podspecs.push [np.name, path.join np.path, np.nativePackage.podspec]
+    else if np.name is 'react-native'
+      podspecs.push [np.name, path.join np.path, 'React.podspec']
     else
       defaultPodspec = path.join np.path, "#{ np.name }.podspec"
       if fs.existsSync defaultPodspec
