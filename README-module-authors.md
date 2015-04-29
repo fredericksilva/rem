@@ -14,7 +14,7 @@ Ex: (in `package.json`)
 
 ### 2. Create a `.podspec` file for your module
 
-This is where you will describe what native code -- the Obj-C you've written and any Swift or CocoaPods depdendencies -- your module needs.
+This is where you will describe what native code -- the Obj-C you've written and any Swift or CocoaPods dependencies -- your module needs.
 
 Make a file called `<your-package-name>.podspec` in the same directory as your `.xcodeproj` and `package.json`.
 
@@ -53,7 +53,7 @@ You can make it whatever you want, but setting it to `'ios/**/*.{h,m}'` is a goo
 
 * In general, `s.name` should match the name of your module as specified in your `package.json`.
 
-* For more infomration, look at [the podspec documentation](https://guides.cocoapods.org/syntax/podspec.html).
+* For more information, look at [the podspec documentation](https://guides.cocoapods.org/syntax/podspec.html).
 
 
 ### 3. Test your module
@@ -74,5 +74,6 @@ You can test your module by installing it in a project you're using.
 ### 4. Publish your module to npm
 You publish rem modules the same you way you would publish any other npm package.
 
-Some guidelines:
-* Start your package names with the prefix `react-native-` so that these can be diden
+Some guidelines so that these modules can be properly identified and categorized:
+* Start your package names with the prefix `react-native-`
+* Include the keyword `react-native` when you publish
