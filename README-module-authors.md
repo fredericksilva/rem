@@ -1,11 +1,8 @@
 ## Writing Modules for rem (for module authors)
- 
 
 ### 1. Add the key `nativePackage` to your module's `package.json` file
 
 _If your module doesn't rely on any native code that you or anyone else has written, i.e. no Obj-C or Swift or CocoaPods, then you can skip this; just make a regular npm module; it can include rem native modules as dependencies without you doing anything special._
-
-This can just be a any truthy value (`true` works, for example), and all the default options will be assumed.
 
 Ex: (in `package.json`)
 ```json
@@ -15,25 +12,13 @@ Ex: (in `package.json`)
   ...
 ```
 
-If you want to use more advanced configuration, make it an object literal. Currently the only option that is supported is `podspec`, which you can use to specify the path from the `package.json` directory to the `.podspec` file that describes the Obj-C/Swift source code your module uses and any CocoaPods dependencies it relies on.
-
-Ex: (in `package.json`)
-```json
-  ...
-  },
-  "nativePackage": {
-    "podspec":     
-  },
-  ...
-```
-
 ### 2. Create a `.podspec` file for your module
 
 This is where you will describe what native code -- the Obj-C you've written and any Swift or CocoaPods depdendencies -- your module needs.
 
-By default, `rem` will look for your `.podspec` file at `<package-name>.podpsec` (where `<package-name>` is the value of the `name` key in your `package.json`) in the same directory as your `package.json`. So, if you are working on a module called `react-native-url-handler`, then by default, your podspec file should be called `react-native-url-handler.podspec` in the same directory.
+Make a file called `<your-package-name>.podspec` in the same directory as your `.xcodeproj` and `package.json`.
 
-Here is an example of what your podspec file might look like: 
+Start with this basic template and then modify it so it matches your own project.
 ```podspec
 #
 # Be sure to run `pod lib lint react-native-vibration.podspec' to ensure this is a
@@ -68,6 +53,9 @@ You can make it whatever you want, but setting it to `'ios/**/*.{h,m}'` is a goo
 
 * In general, `s.name` should match the name of your module as specified in your `package.json`.
 
+* For more infomration, look at [the podspec documentation](https://guides.cocoapods.org/syntax/podspec.html).
+
+
 ### 3. Test your module
 
 You can test your module by installing it in a project you're using.
@@ -86,7 +74,5 @@ You can test your module by installing it in a project you're using.
 ### 4. Publish your module to npm
 You publish rem modules the same you way you would publish any other npm package.
 
-Some guidelines so that these modules can be properly identified and categorized:
-* Start your package names with the prefix `react-native-`
-* Include the keyword `react-native` when you publish
-
+Some guidelines:
+* Start your package names with the prefix `react-native-` so that these can be diden
