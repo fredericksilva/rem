@@ -157,7 +157,7 @@ Some guidelines so that these modules can be properly identified and categorized
 * Include the keyword `react-native` when you publish
 ## How it Works
 
-`rem` uses [CocoaPods]() and [npm]() which are the most popular packaging tools for iOS and JS, respectively.
+`rem` uses [CocoaPods](https://cocoapods.org/) and [npm](https://www.npmjs.com/) which are the most popular packaging tools for iOS and JS, respectively.
 
 When you run `rem init`:
 * A `Podfile` is created for you, if necessary
