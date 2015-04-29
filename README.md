@@ -58,12 +58,21 @@ npm install -g ReactExtensionManager/rem
 ```
 Once rem is ready, we'll publish it to npm.
 
+## Installing Modules with rem (for app developers)
 
-## Configuration
+React Native extensions are npm packages that include native code. Rem's job is to help integrate them in your app.
 
-rem's configuration lives in your `package.json` file under a key named "reactNativeApp".
+### 1. Set up rem (one-time)
 
+The first time you use rem in your project, you will need to set up rem. By default, rem assumes that your JS project and Xcode project reside in the same directory. This is how projects created with `react-native init` are set up. If this is the case for your project, run:
+```
+npm install rem --save-dev
+rem init
+```
+
+For projects with different directory hierarchies, you can configure rem in your JS project's package.json file:
 ```js
+// package.json
 {
   "reactNativeApp": {
     // Path to the react-native package that provides the React Native library
@@ -76,6 +85,27 @@ rem's configuration lives in your `package.json` file under a key named "reactNa
   }
 }
 ```
+Then run `rem init`.
+
+Rem will create a Podfile in your Xcode project directory, or edit your existing one if  you are already using CocoaPods.
+
+### 2. Install npm packages
+
+Install npm packages with native code that you would like to use. For example, from your JS project directory, run:
+```
+npm install react-native-url-handler
+```
+
+### 3. Install native dependencies
+
+Next, we need to install the native dependencies and add them to the Xcode project with the help of CocoaPods. Go to the directory that contains your Xcode project and you should see a file named "Podfile". From this directory, install your native dependencies by running:
+```
+pod install
+```
+This step may take a minute or so, as CocoaPods needs to determine which version of your dependencies to use and then download them.
+
+### 4. Run app
+
 ## Writing Modules for rem (for module authors)
 
 ### 1. Add the key `nativePackage` to your module's `package.json` file
