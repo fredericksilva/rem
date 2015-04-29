@@ -85,7 +85,7 @@ For projects with different directory hierarchies, you can configure rem in your
   }
 }
 ```
-Then run `rem init`.
+Then run `npm install rem --save-dev && rem init`.
 
 Rem will create a Podfile in your Xcode project directory, or edit your existing one if  you are already using CocoaPods.
 
