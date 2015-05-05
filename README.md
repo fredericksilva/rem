@@ -47,6 +47,11 @@ The most common way to install CocoaPods is from a Ruby gem. It works with the d
 sudo gem install cocoapods
 ```
 
+Another option is to install [the new standalone CocoaPods installer](https://github.com/CocoaPods/CocoaPods-app).  It is available through Homebrew:
+```
+brew install Caskroom/cask/cocoapods
+```
+
 For other ways to install CocoaPods and to keep it up to date, see [the CocoaPods installation guide](https://guides.cocoapods.org/using/getting-started.html).
 
 
