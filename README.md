@@ -212,8 +212,8 @@ Some ideas for enhancements:
 * Better resolution and error handling if two modules depend on different incompatible versions of the same CocoaPod
 * Something that will automatically run `pod install` when necessary (but not unnecessarily since that's slow...)
 
-## Known Problems
-* If two modules depend on two different versions of the same CocoaPod, then there is no way to correctly build the project.
+## Known Limitations
+* Unlike with npm packages, native iOS code cannot contain different versions of the same library in an application. Therefore, an extension that relies on e.g. CocoaLumberjack 1.x and another extension relies on CocoaLumberjack 2.x will not be able to coexist.
 * If Obj-C source code from different modules uses the same symbols (e.g. class names, etc.), then those will conflict.
 
 ## Android
